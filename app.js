@@ -10,10 +10,11 @@ app.set('view engine', 'pug');
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
 
 
+app.get("/h1",(req,res)=>{
+  res.end("hello")
+});
 // error handler
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
